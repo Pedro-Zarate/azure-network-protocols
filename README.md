@@ -80,21 +80,6 @@ Ensure both VMs are in the same Virtual Network / Subnet </p>
 
 <!-- 
 
-<ul>
-  <li> </li>
-   <img src="">
-  <li> </li>
-   <img src="">
-  <li> </li>
-   <img src="">
-  <li> </li>
-   <img src="">
-  <li> </li>
-   <img src="">
-  <li> </li>
-
-</ul>
-
  --> 
 
 <h2>(Configuring a Firewall [Network Security Group]) </h2>
@@ -128,16 +113,38 @@ Ensure both VMs are in the same Virtual Network / Subnet </p>
     
 </ul>
 
+<h2> (Observe DHCP Traffic) </h2>
+
+<ul>
+  <li>Back in Wireshark, filter for DHCP traffic only </li>
+  <img src="https://i.imgur.com/vUyTWBB.png" >
+  <li>From your Windows 10 VM, attempt to issue your VM a new IP address from the command line 
+  <ul>
+    <li>Open PowerShell as admin and run: ipconfig /renew</li>  
+    <li> Observe the DHCP traffic appearing in WireShark </li>  <img src="https://i.imgur.com/m2hAMV7.png">
+  </ul> 
+  </li>
+</ul>
+
+<h2>(Observe DNS Traffic) </h2>
+<ul>
+  <li>Back in Wireshark, filter for DNS traffic only</li>
+   <img src="https://i.imgur.com/sGBXRWt.png">
+  <li> From your Windows 10 VM within a command line, use (nslookup) to see what google.com IP addresses are  
+  <li>Observe the DNS traffic being show in WireShark </li> 
+  <img src="https://i.imgur.com/pa6um4C.png">
+  </li></li>
+
+  
+</ul>
 
 
+<h2> (Observe RDP Traffic) </h2>
 
-
-
-
-
-
-
-
+<ul>
+  <li> Back in Wireshark, filter for RDP traffic only (tcp.port == 3389) </li>
+  <img src="https://i.imgur.com/2ZucrVl.png">
+</ul>
 
 
 
